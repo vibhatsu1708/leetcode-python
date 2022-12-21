@@ -3,4 +3,4 @@ def palindromeNumber (x) :
     temp = str(x)
     return (temp == temp[::-1])
 
-print(palindromeNumber(-121))
+print(palindromeNumber(-121))x
