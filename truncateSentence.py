@@ -10,7 +10,7 @@ def truncateSentence (s, k) :
     for i in range (0, k) :
         newArr.append(sArr[i])
     newStr = " ".join(newArr)
-    return newStr
+    return newArr
 
     
 print(truncateSentence(s="Hello how are you Contestant", k=4))
