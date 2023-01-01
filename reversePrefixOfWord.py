@@ -15,4 +15,3 @@ def reversePrefix (word, ch) :
     revprefix = prefix[::-1] + word[address:]
     return revprefix
 print(reversePrefix(word="xyxzxe", ch="z"))
-    
