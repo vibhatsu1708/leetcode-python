@@ -4,7 +4,7 @@
 # Return the resulting string.
 
 def reversePrefix (word, ch) :
-    prefix, revprefix = "", ""
+    prefix, revprefix = "",""
     newword = ""
     address = 0
     for i in range (len(word)) :
