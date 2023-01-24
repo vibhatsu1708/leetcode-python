@@ -4,12 +4,10 @@
 # Return the matrix after sorting it.
 
 def sortTheStudents (score, k) :
-    # to loop through the rows
     for i in range (len(score)) :
-        # to iterate through the columns
         for j in range (len(score)-i-1) :
-            # to iterate through only the elements in the kth column, and sort the rows accordingly
             if score[j][k] < score[j+1][k] :
                 score[j], score[j+1] = score[j+1], score[j]
     return score
-print(sortTheStudents(score = [[3,4],[5,6]], k = 0))
+        
+print(sortTheStudents(score = [[10,6,9,1],[7,5,11,2],[4,8,3,15]], k = 2))
