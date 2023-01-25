@@ -6,14 +6,9 @@
 def countDistinctIntegers (nums) :
     reverseNums = []
     for num in nums :
-        reversedNum = 0
-        temp = num
-        while (temp > 0) :
-            remainder = temp % 10
-            reversedNum = reversedNum*10 + remainder
-            temp //= 10
-        reverseNums.append(reversedNum)
+        reversedNum = str(num)[::-1]
+        reverseNums.append(int(reversedNum))
     for num in reverseNums :
         nums.append(num)
     return len(set(nums))
-print(countDistinctIntegers(nums = [2,2,2]))
+print(countDistinctIntegers(nums = [1,13,10,12,31]))
