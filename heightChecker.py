@@ -4,16 +4,31 @@
 # Return the number of indices where heights[i] != expected[i].
 
 def heightChecker (heights) :
-    # Done using Bubble Sort
-    expected = heights[::]
-    swapped = True
+    # Bubble Sort
     count = 0
-    while (swapped) :
-        swapped = False
-        for i in range (len(expected)-1) :
-            if expected[i] > expected[i+1] :
-                expected[i], expected[i+1] = expected[i+1], expected[i]
-                swapped = True
+    expected = heights[::]
+    # swapped = True
+    # while (swapped) :
+    #     swapped = False
+    #     for i in range (len(expected)-1) :
+    #         if expected[i] > expected[i+1] :
+    #             expected[i], expected[i+1] = expected[i+1], expected[i]
+    #             swapped = True
+    
+    # Selection Sort
+    # for i in range (len(heights)) :
+    #     minIndex = i
+    #     for j in range (i+1, len(heights)) :
+    #         if heights[j] < heights[minIndex] :
+    #             minIndex = j
+    #     heights[i], heights[minIndex] = heights[minIndex], heights[i]
+    
+    # Insertion Sort
+    for i in range (1, len(heights)) :
+        currentIndex = i
+        while (currentIndex > 0) and (heights[currentIndex-1] > heights[currentIndex]) :
+            heights[currentIndex], heights[currentIndex-1] = heights[currentIndex-1], heights[currentIndex]
+            currentIndex -= 1
     for i in range (len(expected)) :
         if expected[i] != heights[i] :
             count += 1
