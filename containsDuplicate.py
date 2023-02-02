@@ -25,12 +25,19 @@ def check (nums) :
     #         return True
     # return False
     
-    seen = {}
+    # seen = {}
+    # for num in nums :
+    #     if num not in seen :
+    #         seen[num] = 1
+    #     else :
+    #         return True
+    # return False
+    
+    hashset = set()
     for num in nums :
-        if num not in seen :
-            seen[num] = 1
-        else :
+        if num in hashset :
             return True
+        hashset.add(num)
     return False
-print(check (nums=[1,2,3,4]))
+print(check (nums=[1,2,3,1]))
             
