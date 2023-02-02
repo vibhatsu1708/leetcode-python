@@ -16,14 +16,21 @@ def check (nums) :
     #         return True
     # return False
 
-    duplicates = {}
+    # duplicates = {}
+    # for num in nums :
+    #     if num not in duplicates :
+    #         duplicates[num] = 1
+    #         continue
+    #     if num in duplicates :
+    #         return True
+    # return False
+    
+    seen = {}
     for num in nums :
-        if num not in duplicates :
-            duplicates[num] = 1
-            continue
-        if num in duplicates :
+        if num not in seen :
+            seen[num] = 1
+        else :
             return True
     return False
-
-print(check (nums=[1,1,1,3,3,4,3,2,4,2]))
+print(check (nums=[1,2,3,4]))
             
