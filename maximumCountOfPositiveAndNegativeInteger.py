@@ -11,5 +11,4 @@ def maximumCount (nums) :
         if i < 0 :
             negcount += 1
     return max(poscount, negcount)
-
 print(maximumCount(nums=[5,20,66,1314]))
