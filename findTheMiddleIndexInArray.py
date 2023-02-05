@@ -18,5 +18,4 @@ def findMiddleIndex (nums) :
         leftSum += nums[i]
         rightSum -= nums[i]
     return -1
-    
 print(findMiddleIndex(nums = [2,3,-1,8,4]))
