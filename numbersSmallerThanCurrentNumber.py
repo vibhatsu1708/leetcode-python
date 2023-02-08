@@ -3,13 +3,13 @@
 # Return the answer in an array.
 
 def smallerNumbersThanCurrent (nums) :
-    smaller = []
+    result = []
     for i in nums :
         count = 0
         for j in nums :
             if i > j :
                 count += 1
-        smaller.append(count)
-    return smaller
+        result.append(count)
+    return result
 print(smallerNumbersThanCurrent(nums=[8,1,2,2,3]))
         
