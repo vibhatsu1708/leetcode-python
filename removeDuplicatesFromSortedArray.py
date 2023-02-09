@@ -10,5 +10,5 @@ def removeDuplicates (nums) :
         if nums[i] != nums[i-1] :
             nums[actualLength] = nums[i]
             actualLength += 1
-    return actualLength
+    return nums
 print(removeDuplicates(nums=[0,0,2,2,3,3,4,1,1]))
