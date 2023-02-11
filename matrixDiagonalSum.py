@@ -3,16 +3,16 @@
 # Only include the sum of all the elements on the primary diagonal and all the elements on the secondary diagonal that are not part of the primary diagonal.
 
 def diagonalSum (mat) :
-    sum = 0
-    rows, cols, length = len(mat), len(mat[0]), len(mat)
-    for i in range (rows) :
-        for j in range (cols) :
+    sumDiagonal = 0
+    for i in range (len(mat)) :
+        for j in range (len(mat)) :
             if i == j :
-                sum += mat[i][j]
-            if (i+j) == (length-1) :
-                sum += mat[i][j]
-    if length%2 != 0 :
-        return sum - mat[length//2][length//2]
-    else :
-        return sum
-print(diagonalSum(mat=[[5]]))
+                sumDiagonal += mat[i][j]
+            if (i+j) == (len(mat)-1) :
+                sumDiagonal += mat[i][j]
+    if len(mat)%2 != 0 :
+        sumDiagonal -= mat[len(mat)//2][len(mat)//2]
+    return sumDiagonal
+print(diagonalSum(mat = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]))
