@@ -5,15 +5,12 @@
 def rotate (matrix) :
     # find transpose of a matrix.
     for i in range (len(matrix)) :
-        for j in range (i+1, len(matrix)) :
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-    # reverse the rows of each row in the matrix.
+        for j in range (len(matrix)) :
+            if i <= j :
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    # swap the elements from 0 till halfway, and from halfway till the end. 
     for i in range (len(matrix)) :
-        start = 0
-        end = len(matrix[0])-1
-        while (start < end) :
-            matrix[i][start], matrix[i][end] = matrix[i][end], matrix[i][start]
-            start += 1
-            end -= 1
+        for j in range (len(matrix)//2) :
+            matrix[i][j], matrix[i][len(matrix)-j-1] = matrix[i][len(matrix)-j-1], matrix[i][j]
     return matrix
 print(rotate(matrix = [[1,2,3],[4,5,6],[7,8,9]]))
