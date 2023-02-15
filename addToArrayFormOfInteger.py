@@ -12,4 +12,4 @@ def addToArrayForm (num, k) :
     for ch in str(numstr) :
         newnum.append(int(ch))
     return newnum
-print(addToArrayForm(num = [1,2,0,0], k = 34))
+print(addToArrayForm(num = [9,9,9,9,9,9,9,9,9,9], k = 1))
