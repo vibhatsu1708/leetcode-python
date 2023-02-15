@@ -4,12 +4,12 @@
 # Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
 
 def addToArrayForm (num, k) :
-    numInt = ""
-    for i in range (len(num)) :
-        numInt += str(num[i])
-    numInt = str(int(numInt) + k)
-    newNum = []
-    for i in range (len(numInt)) :
-        newNum.append(int(numInt[i]))
-    return newNum
+    numstr = ""
+    for digit in num :
+        numstr += str(digit)
+    numstr = int(numstr) + k
+    newnum = []
+    for ch in str(numstr) :
+        newnum.append(int(ch))
+    return newnum
 print(addToArrayForm(num = [1,2,0,0], k = 34))
