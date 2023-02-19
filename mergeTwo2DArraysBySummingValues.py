@@ -9,12 +9,18 @@
 # Return the resulting array. The returned array must be sorted in ascending order by id.
 
 def mergeArrays (nums1, nums2) :
-    idValues = {}
-    for id, value in nums1 :
-        idValues[id] = idValues.get(id, 0) + value
-    for id, value in nums2 :
-        idValues[id] = idValues.get(id, 0) + value
-    sortedId = [[id, value] for id, value in idValues.items()]
-    sortedId.sort()
-    return sortedId
+    left, right = 0, 0
+    result = []
+    while (left < len(nums1) or right < len(nums2)) :
+        if (right == len(nums2)) or (left < len(nums1) and nums1[left][0] < nums2[right][0]) :
+            result.append(nums1[left])
+            left += 1
+        elif (left == len(nums1)) or (right < len(nums2) and nums1[left][0] > nums2[right][0]) :
+            result.append(nums2[right])
+            right += 1
+        else :
+            result.append([nums1[left][0], nums1[left][1] + nums2[right][1]])
+            left += 1
+            right += 1
+    return result
 print(mergeArrays(nums1 = [[2,4],[3,6],[5,5]], nums2 = [[1,3],[4,3]]))
