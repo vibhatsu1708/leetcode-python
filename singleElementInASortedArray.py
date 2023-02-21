@@ -1,0 +1,25 @@
+# Single Element in a Sorted Array
+# You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.
+# Return the single element that appears only once.
+# Your solution must run in O(log n) time and O(1) space.
+
+def singleNonDuplicate (nums) :
+    # count = {}
+    # for num in nums :
+    #     if num not in count :
+    #         count[num] = 1
+    #     else :
+    #         count[num] += 1
+    # for item, value in count.items() :
+    #     if value == 1 :
+    #         return item
+    
+    first, second = 0, 1
+    while (first < len(nums) and second < len(nums)-1) :
+        if nums[first] != nums[second] :
+            return nums[first]
+        first += 2
+        second += 2
+    return nums[-1]
+print(singleNonDuplicate(nums = [0,0,2,2,3,3,4]))
+    
