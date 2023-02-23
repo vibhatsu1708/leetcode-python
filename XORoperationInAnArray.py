@@ -5,9 +5,9 @@
 
 def xorOperation (n, start) :
     sum = start
-    i = 1
-    while (i < n) :
-        sum ^= (start + 2 * i)
-        i += 1
+    counter = 1
+    while (counter < n) :
+        sum ^= (start + 2 * counter)
+        counter += 1
     return sum
 print(xorOperation(n = 5, start = 0))
