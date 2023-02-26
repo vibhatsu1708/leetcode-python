@@ -9,11 +9,11 @@
 
 def leftRigthDifference (nums) :
     totalSum = sum(nums)
-    rightSums, leftSums = [0] * len(nums), [0] * len(nums)
-    answer = [0] * len(nums)
+    newSum = 0
+    answer = []
     for i in range (len(nums)) :
-        rightSums[i] = totalSum - sum(nums[0:i+1])
-        leftSums[i] += sum(nums[0:i])
-        answer[i] = abs(leftSums[i] - rightSums[i])
+        totalSum -= nums[i]
+        answer.append(abs(totalSum - newSum))
+        newSum += nums[i]
     return answer
 print(leftRigthDifference(nums = [10,4,8,3]))
