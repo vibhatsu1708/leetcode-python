@@ -1,4 +1,5 @@
-# Sender With Largest Word Count You have a chat log of n messages. You are given two string arrays messages and
+# Sender With Largest Word Count
+# You have a chat log of n messages. You are given two string arrays messages and
 # senders where messages[i] is a message sent by senders[i].
 #
 # A message is list of words that are separated by a single space with no leading or trailing spaces. The word count
