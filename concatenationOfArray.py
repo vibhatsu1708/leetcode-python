@@ -3,10 +3,9 @@
 # Specifically, ans is the concatenation of two nums arrays.
 # Return the array ans.
 
-def getConcatenation (nums) :
-    ans = []
-    n = len(nums)
-    for i in range(n) :
-        ans.append(nums[i])
-    return ans+ans
-print(getConcatenation(nums=[1,3,2,1]))
+def getConcatenation(nums):
+    newNums = [0] * (2*len(nums))
+    for i in range(len(nums)):
+        newNums[i], newNums[i+len(nums)] = nums[i], nums[i]
+    return newNums
+print(getConcatenation(nums = [1,2,1]))
