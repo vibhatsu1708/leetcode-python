@@ -3,12 +3,12 @@
 # A word is a maximal substring consisting of non-space characters only.
 
 def lengthOfLastWord (s) :
-    length = 0
-    str = s.strip()
-    for i in range (len(str)) :
-        if str[i] != " " :
-            length += 1
-        else :
-            length = 0
-    return length
-print(lengthOfLastWord(s="luffy is still joyboy"))
+    i = len(s)-1
+    count = 0
+    while (s[i] == " "):
+        i -= 1
+    while (i >= 0 and s[i] != " "):
+        count += 1
+        i -= 1
+    return count
+print(lengthOfLastWord(s = "   fly me   to   the moon  "))
