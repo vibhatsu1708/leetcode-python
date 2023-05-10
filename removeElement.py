@@ -5,13 +5,13 @@
 # Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 
 def removeElement (nums, val) :
-    i = 0
+    pointer = 0
     length = len(nums)
-    while (i < length) :
-        if nums[i] == val :
-            nums[i], nums[length-1] = nums[length-1], nums[i]
+    while (pointer < length):
+        if nums[pointer] == val:
+            nums[pointer], nums[length-1] = nums[length-1], nums[pointer]
             length -= 1
-        else :
-            i += 1
-    return nums
-print(removeElement(nums = [0,1,2,2,3,0,4,2], val = 2))
+        else:
+            pointer += 1
+    return length
+print(removeElement(nums = [3,2,2,3], val = 3))
