@@ -3,12 +3,15 @@
 # You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 # Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
-def maxProfit (prices) :
-    buy = prices[0]
-    sell = 0
-    for i in range (len(prices)) :
-        if prices[i] > buy :
-            sell = max(sell, prices[i] - buy)
-        buy = min(buy, prices[i])
-    return sell
+def maxProfit(prices):
+    left, right = 0, 1
+    maxP = 0
+    while (right < len(prices)):
+        if prices[left] < prices[right]:
+            profit = prices[right] - prices[left]
+            maxP = max(maxP, profit)
+        else:
+            left = right
+        right += 1
+    return maxP
 print(maxProfit(prices = [7,6,4,3,1]))
