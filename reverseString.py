@@ -3,10 +3,10 @@
 # You must do this by modifying the input array in-place with O(1) extra memory.
 
 def reverseString (s) :
-    left, right = 0, len(s)-1
-    while (left < right) :
-        s[left], s[right] = s[right], s[left]
-        left += 1
-        right -= 1
+    first, second = 0, len(s)-1
+    while (first < second):
+        s[first], s[second] = s[second], s[first]
+        first += 1
+        second -= 1
     return s
 print(reverseString(s=["h","e","l","l","o"]))
