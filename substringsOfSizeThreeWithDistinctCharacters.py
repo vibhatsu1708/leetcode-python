@@ -5,9 +5,10 @@
 # A substring is a contiguous sequence of characters in a string.
 
 def countGoodSubstrings (s) :
+    k = 3
     count = 0
-    for i in range (0, len(s)-2) :
-        if s[i] != s[i+1] and s[i+1] != s[i+2] and s[i] != s[i+2] :
-            count += 1 
-    return count
+    for i in range(len(s) - (k-1)):
+        if len("".join(sorted(set(s[i:i+k])))) == 3:
+            count += 1
+    return countg
 print(countGoodSubstrings(s = "aababcabc"))
