@@ -10,5 +10,5 @@ def countGoodSubstrings (s) :
     for i in range(len(s) - (k-1)):
         if len("".join(sorted(set(s[i:i+k])))) == 3:
             count += 1
-    return countg
+    return count
 print(countGoodSubstrings(s = "aababcabc"))
