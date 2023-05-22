@@ -3,16 +3,14 @@
 # Note that you must do this in-place without making a copy of the array.
 
 def moveZeroes (nums) :
-    count = 0
+    pointer = 0
     i = 0
-    while (i < len(nums)) :
-        if nums[i] == 0 :
-            count += 1
-            nums.remove(nums[i])
-        else :
-            i += 1
-    nums.extend([0] * count)
+    while (i < len(nums)):
+        if nums[i] != 0:
+            nums[pointer] = nums[i]
+            pointer += 1
+        i += 1
+    for i in range(pointer, len(nums)):
+        nums[i] = 0
     return nums
-        
-        
-print(moveZeroes(nums=[0,1,0,1,0,3,1,0,2,3,12]))
+print(moveZeroes(nums = [0,1,0,3,12]))
