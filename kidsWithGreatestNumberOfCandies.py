@@ -4,15 +4,10 @@
 # Note that multiple kids can have the greatest number of candies.
 
 def kidsWithCandies (candies, extraCandies) :
-    maxCandies = max(candies)
-            
     result = [False] * len(candies)
-    
-    for index, candyValues in enumerate(candies) :
-        if (candyValues+extraCandies) >= maxCandies :
-            result[index] = True
+    maxCandies = max(candies)
+    for i in range(len(candies)):
+        if (candies[i] + extraCandies) >= maxCandies:
+            result[i] = True
     return result
-    
-    
-
 print(kidsWithCandies(candies=[2,3,5,1,3], extraCandies=3))
