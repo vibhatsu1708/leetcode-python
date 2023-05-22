@@ -6,24 +6,14 @@
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
 def productExceptSelf(nums):
-    left, right = [0]*len(nums), [0]*len(nums)
-    result = [0]*len(nums)
-    
-    left[0], right[-1] = 1, 1
-    
-    # for the left array of number products
+    leftProd, rightProd = [0] * len(nums), [0] * len(nums)
+    leftProd[0], rightProd[-1] = 1, 1
     for i in range(1, len(nums)):
-        left[i] = left[i-1] * nums[i-1]
-        
-    # for the right array of number products
-    for j in range(len(nums)-2, -1, -1):
-        right[j] = right[j+1] * nums[j+1]
-        
-    # creating the final array result
-    for i in range(len(result)):
-        result[i] = left[i] * right[i]
-        
+        leftProd[i] = leftProd[i-1] * nums[i-1]
+    for i in range(len(nums)-2, -1, -1):
+        rightProd[i] = rightProd[i+1] * nums[i+1]
+    result = [0] * len(nums)
+    for i in range(len(nums)):
+        result[i] = (leftProd[i] * rightProd[i])
     return result
-        
-    
-print(productExceptSelf(nums = [-1,1,0,-3,3]))
+print(productExceptSelf(nums = [1,2,3,4]))
