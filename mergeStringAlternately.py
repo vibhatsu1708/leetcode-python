@@ -4,17 +4,16 @@
 # the end of the merged string. Return the merged string.
 
 def mergeAlternately(word1, word2):
-    newstr = ""
-    i, j = 0, 0
-    while i < len(word1) and j < len(word2):
-        newstr += word1[i]
-        newstr += word2[j]
-        i += 1
-        j += 1
-    if i != len(word1):
-        return newstr + word1[i:]
-    elif j != len(word2):
-        return newstr + word2[j:]
-    return newstr
-
-print(mergeAlternately(word1="abcd", word2="pq"))
+    result = ""
+    left, right = 0, 0
+    while (left < len(word1) and right < len(word2)):
+        result += word1[left] + word2[right]
+        left += 1
+        right += 1
+    if left != len(word1):
+        return result + word1[left:]
+    if right != len(word2):
+        return result + word2[right:]
+    else:
+        return result
+print(mergeAlternately(word1 = "ab", word2 = "pqrs"))
