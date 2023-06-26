@@ -8,13 +8,10 @@
 # Your solution must use only constant extra space.
 
 def twoSum(numbers, target):
-    left, right = 0, len(numbers)-1
-    while (left < right):
-        currentSum = numbers[left] + numbers[right]
-        if currentSum == target:
-            return [left+1, right+1]
-        elif currentSum < target:
-            left += 1
-        else:
-            right -= 1
+    numMap = {}
+    for i, num in enumerate(numbers):
+        difference = target - num
+        if difference in numMap:
+            return [numMap[difference]+1, i+1]
+        numMap[num] = i
 print(twoSum(numbers = [2,7,11,15], target = 13))
